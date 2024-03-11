@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="Fast Withdraw Client"
+run/main_scene="res://client_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Net="*res://net.gd"
