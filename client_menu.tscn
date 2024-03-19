@@ -13,9 +13,68 @@ script = ExtResource("1_4itd0")
 
 [node name="ButtonTest" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Test
+offset_left = 15.0
+offset_top = 47.0
+offset_right = 303.0
+offset_bottom = 78.0
+text = "Request fast withdrawal test invoice"
+
+[node name="LineEditMainchainAddress" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 429.0
+offset_bottom = 41.0
+placeholder_text = "Enter mainchain address"
+
+[node name="LabelInvoice" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 90.0
+offset_right = 62.0
+offset_bottom = 113.0
+
+[node name="ButtonTestComplete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 221.0
+offset_right = 117.0
+offset_bottom = 252.0
+text = "Invoice Paid"
+
+[node name="LineEditTXID" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 182.0
+offset_right = 620.0
+offset_bottom = 213.0
+placeholder_text = "Enter L2 payment txid"
+
+[node name="LabelComplete" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 264.0
+offset_right = 550.0
+offset_bottom = 287.0
+
+[node name="SpinBoxAmount" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 9.0
+offset_right = 776.0
+offset_bottom = 40.0
+min_value = 1.0
+value = 1.0
+suffix = "BTC"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 14.0
+offset_right = 608.0
+offset_bottom = 37.0
+text = "Amount to withdraw:
 "
 
 [connection signal="pressed" from="ButtonTest" to="." method="_on_button_test_pressed"]
+[connection signal="pressed" from="ButtonTestComplete" to="." method="_on_button_test_complete_pressed"]
