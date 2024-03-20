@@ -3,6 +3,8 @@ extends Control
 const SERVER_1 = "127.0.0.1"
 const PORT = 8382
 
+var invoice_address : String = ""
+
 func _ready() -> void:
 	# Create fast withdraw client
 	var peer = ENetMultiplayerPeer.new()
@@ -32,8 +34,10 @@ func _on_fast_withdraw_invoice(amount : float, destination: String) -> void:
 	print("Destination: ", destination)
 	
 	var invoice_text = "Fast withdraw request received!\n"
-	invoice_text += str("Send ", amount, " BTC to ", destination, "\n") 
+	invoice_text += str("Send ", amount, " L2 coins to ", destination, "\n") 
 	invoice_text += "Then enter the L2 txid and hit invoice paid"
+	
+	invoice_address = destination
 	
 	$LabelInvoice.text = invoice_text
 
@@ -46,3 +50,7 @@ func _on_fast_withdraw_complete(txid: String, amount : float, destination: Strin
 	
 	$LabelComplete.text = str("Withdraw complete: ", txid)
 
+
+func _on_button_copy_address_pressed() -> void:
+	DisplayServer.clipboard_set(invoice_address)
+	

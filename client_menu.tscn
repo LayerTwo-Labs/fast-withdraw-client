@@ -76,5 +76,15 @@ offset_bottom = 37.0
 text = "Amount to withdraw:
 "
 
+[node name="ButtonCopyAddress" type="Button" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 119.0
+offset_right = 612.0
+offset_bottom = 150.0
+text = "Copy Address
+"
+
 [connection signal="pressed" from="ButtonTest" to="." method="_on_button_test_pressed"]
 [connection signal="pressed" from="ButtonTestComplete" to="." method="_on_button_test_complete_pressed"]
+[connection signal="pressed" from="ButtonCopyAddress" to="." method="_on_button_copy_address_pressed"]
